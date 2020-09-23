@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./page.css" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    #intro {
+      background-color: beige;
+    }
+
+    #gallery {
+      background-color: lightblue;
+    }
+
+    table, tr, th, td {
+      border: 1px solid grey;
+      border-collapse: collapse;
+    }
+
+    b {
+      color: red
+    }
+  </style>
+</head>
+<body>
+  <div id="intro">
+    <h1>HTML elements</h1>
+    <a href="./page2.html">Go to PAGE2</a>
+    <table>
+      <thead>
+        <tr>
+          <th>Block</th>
+          <th>Inline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>p</td>
+          <td>a</td>
+        </tr>
+        <tr>
+          <td>div</td>
+          <td>img</td>
+        </tr>
+        <tr>
+          <td>hr</td>
+          <td>br</td>
+        </tr>
+        <tr>
+          <td>hr</td>
+          <td>br</td>
+        </tr>
+        <tr>
+          <td>table</td>
+          <td>span</td>
+        </tr>
+        <tr>
+          <td>form</td>
+          <td>input</td>
+        </tr>
+        <tr>
+          <td>ul, ol, li</td>
+          <td>textarea</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="contact">
+    <h2>Contact Us</h2>
+    <p>
+      <span>Lorem ipsum</span> dolor sit amet consectetur adipisicing elit. <b><u>Dolores</u></b> <i>fugiat</i> ratione <u>labore</u> voluptates omnis. Itaque, recusandae ipsa. Natus at, repellendus magnam dolorem ipsa sed quam qui hic error, quia voluptatum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi atque laudantium omnis, voluptatibus, ratione laborum unde dignissimos debitis, doloribus illo possimus vero! Facilis impedit, quo doloremque ipsam sed quam inventore.
+    </p>
+
+    <form>
+      <input type="text" placeholder="Full name" /><br/>
+      <input type="email" placeholder="Email address" /><br/>
+      <input type="password" placeholder="Password" /><br/>
+
+      <label><input type="radio" value="male" name="gender"/>Male</label>
+      <label><input type="radio" value="female" name="gender"/>Female</label><br/>
+
+      <label><input type="radio" value="single" name="marital"/>Single</label>
+      <label><input type="radio" value="married" name="marital"/>Married</label><br/>
+
+      <label><input type="checkbox" value="html" name="skills"/>HTML</label>
+      <label><input type="checkbox" value="css" name="skills"/>CSS</label>
+      <label><input type="checkbox" value="js" name="skills"/>JavaScript</label>
+      <label><input type="checkbox" value="jquery" name="skills"/>jQuery</label><br/>
+
+      <select>
+        <option selected="true" disabled="true">-- Select planet where you live --</option>
+        <option value="1">Mercury</option>
+        <option value="2">Venus</option>
+        <option value="3">Earth</option>
+        <option value="4">Mars</option>
+      </select><br/>
+
+      <textarea rows="5" cols="50" maxlength="10" placeholder="Your feedback"></textarea><br/>
+      <button type="submit">Submit Form</button>
+    </form>
+  </div>
+
+  <div id="gallery">
+    <h2>Gallery</h2>
+    <img src="https://news.artnet.com/app/news-upload/2018/02/image-256x256.jpg"/>
+    <img src="https://news.artnet.com/app/news-upload/2018/02/image-256x256.jpg"/>
+    <img src="https://news.artnet.com/app/news-upload/2018/02/image-256x256.jpg"/>
+    <img src="https://news.artnet.com/app/news-upload/2018/02/image-256x256.jpg"/>
+    <img src="https://news.artnet.com/app/news-upload/2018/02/image-256x256.jpg"/>
+    <img src="https://news.artnet.com/app/news-upload/2018/02/image-256x256.jpg"/>
+    <img src="https://news.artnet.com/app/news-upload/2018/02/image-256x256.jpg"/>
+    <img src="https://news.artnet.com/app/news-upload/2018/02/image-256x256.jpg"/>
+  </div>
+
+</body>
+</html>
