@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model Manipulation</title>
+</head>
+<body>
+    <div>
+        <h5>Here in Javascript we are doing direct Manipulation of the DOM</h5>
+        <h3 id="dateTime"></h3>
+        <ul id="listing">
+            <li id="animation">Animation</li>
+            <li id="heroes">Heroes</li>
+        </ul>
+        <button id="changeTextButton" onclick=changeText() >Change Text</button>
+    </div>
+    <script type="text/javascript">
+        var ulString = '<ul>i am ul string</ul>'
+        var listingUl = document.getElementById('listing');
+        var animationLi = document.getElementById('animation');
+        var dateTimeH3 = document.getElementById('dateTime');
+
+        var containerDiv = document.createElement('div')
+        var ul = document.createElement('ul');
+        ul.innerText = "i am ul"
+        containerDiv.append(ul);
+        // containerDiv.appendChild(ulString);
+        // containerDiv.innerHTML = ulString;
+        console.log(containerDiv)
+    
+        document.body.append(containerDiv);
+      
+        setTimeout(function(){
+            animationLi.innerText = 'Something New';
+            console.log(animationLi.innerText)
+        },5000);
+
+        var interval = setInterval(() => {
+            dateTimeH3.innerText = Date();
+        },1000);
+
+        var specifictaskInterval = setInterval(() => {
+            // if(conditionmatches) {
+            //     //do the task here
+            //     clearInterval(specifictaskInterval);
+            // }
+        }, 1000);
+
+        setTimeout(function () {
+            clearInterval(interval);
+        },10000)
+
+        function changeText() {
+            animationLi.innerText = 'Something New 2';
+        }
+
+    </script>
+</body>
+</html>

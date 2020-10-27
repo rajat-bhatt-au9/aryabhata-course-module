@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Function & Classes</title>
+</head>
+<body>
+    <h1 id="undefinedTitle"></h1>
+    <table>
+        <thead>
+            <tr>
+                <th id="name">NAME</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Arya</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="./app.js"></script>
+    <script type="text/javascript">
+        var title = document.getElementsByTagName('title')[0];
+        var h1 = document.getElementById('undefinedTitle');
+        h1.innerText = title.innerText;
+    </script>
+</body>
+</html>
