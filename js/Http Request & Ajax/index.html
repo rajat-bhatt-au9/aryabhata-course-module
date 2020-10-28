@@ -44,12 +44,27 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+      <button id="fetchPostButton" onclick="fetchPosts()">Fetch Data</button>
       <div id="response-data-display"></div>
       <div id="result"></div>
   </div>
   <script type="text/javascript">
+  // UNSENT = 0; // initial state
+  // OPENED = 1; // open called
+  // HEADERS_RECEIVED = 2; // response headers received
+  // LOADING = 3; // response is loading (a data packed is received)
+  // DONE = 4; // request complete
 
+  // Actions      Methods
+  // 'Fetch'      'GET'
+  // 'Create'     'POST'
+  // 'Update'     'PATCH' || 'PUT'
+  // 'Remove'     'DELETE'
+
+  // In PATCH method you are "supposed to" update an exisiting data.
+  // In PUT method you are "supposed to" update an exisiting data or you can create a new data according to the input provided.
 
   </script>
+  <script src="./app.js"></script>
 </body>
 </html>
