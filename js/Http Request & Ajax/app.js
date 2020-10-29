@@ -82,6 +82,8 @@ $(document).ready(function(){
         console.log(errors)
         if(!errors) {
             var formData = new FormData(this);
+            formData.append('extraKey',true);
+            // var jsonData = {email, password, terms, gender};
             submitXhr = $.ajax({
                 type:'POST',
                 url:'http://localhost:3939/dummy',
