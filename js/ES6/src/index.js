@@ -96,10 +96,74 @@ const newArray = [ ...userObjectArr, 1, 2, 5, "aakjdhd"];
 // Template literals
 // const myName = ["Arya", "Robert"];
 const myName = {name:"Arya"};
-console.log(1+"123")
+// console.log(1+"123")
 const myAge = 27;
-console.log("Hello! my name is "+myName[0]+" & I am "+myAge+" years old.")
+// console.log("Hello! my name is "+myName[0]+" & I am "+myAge+" years old.")
 const literal = `Hello! I am ${myName.name} & I am using literals`;
-console.log(literal);
+// console.log(literal);
 
 // Arrow functions
+function someFunctionName(value) {
+    return value;
+}
+
+const someFunctionExpression = function(value) {
+    return value;
+}
+
+console.log(someFunctionName(1));
+console.log(someFunctionExpression(2));
+
+const arrowDirect = value => value;
+const arrowReturn = (value, name) => {
+    return {value, name};
+};
+
+console.log(arrowDirect(3));
+console.log(arrowReturn(4,"arya"));
+console.log(
+    ((value, name) => {
+        return {value, name};
+    })(5, "manish")
+)
+const b = 1;
+const c = 2;
+const a = b===c ? b : 5;
+console.log(a);
+
+(function() {
+    let f = this ? class g { } : class h { };
+  
+    return [
+      typeof f,
+      typeof h
+    ];
+  
+  })();
+
+  let x, { x: y = 1 } = { x }; y;
+
+
+  const obj = {
+    log: ['a', 'b', 'c'],
+    latest() {
+      if (this.log.length === 0) {
+        return undefined;
+      }
+      return this.log[this.log.length - 1];
+    }
+  };
+
+  console.log(obj.latest());
+
+  const language = {
+    set current(name) {
+      this.log.push(name);
+    },
+    log: []
+  };
+  
+  language.current = 'EN';
+  language.current = 'FA';
+  
+  console.log(language.log);
