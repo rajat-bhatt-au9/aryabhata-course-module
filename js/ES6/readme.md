@@ -22,3 +22,6 @@ npm i -D @babel/cli @babel/core @babel/node @babel/plugin-proposal-class-propert
     "clean": "rimraf ./dist && mkdir dist"
 }
 ```
+
+## For Iterators and Generators refer a simple doc here
+`https://medium.com/@madasamy/explanation-about-iterators-and-generators-in-javascript-es6-f7e669cbe96e`
