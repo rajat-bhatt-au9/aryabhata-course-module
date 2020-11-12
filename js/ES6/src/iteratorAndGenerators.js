@@ -78,16 +78,23 @@ console.log(output.next())
 console.log(output.next())
 
 
-// const apiCall = () => {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(()=>{
-//             resolve(12)
-//         },1000);
-//     });
-// }
+const apiCall = (param) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            param !== "name" ? resolve(true) : reject("name is not etertained")
+        },1000);
+    });
+}
 
-
-
+const getDataFromApi = async () => {
+    try {
+        const data =  await apiCall("name1");
+        console.log(data)
+    } catch (error) {
+        console.log(error)
+    }
+}
+getDataFromApi();
 // console.log(apiCall());
 
 // const thrirdBlockCode = () => {

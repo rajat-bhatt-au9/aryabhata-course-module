@@ -8,6 +8,7 @@
     "start": "babel-watch ./src/index.js",
     "getset": "babel-watch ./src/getset.js",
     "ing": "babel-watch ./src/iteratorAndGenerators.js",
+    "functional": "babel-watch ./src/functional.js",
     "classes": "babel-watch ./src/classes.js",
     "clean": "rimraf ./dist && mkdir dist",
     "babel-build": "babel -d ./dist ./src -s",
