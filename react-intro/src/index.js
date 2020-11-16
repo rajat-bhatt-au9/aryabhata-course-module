@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import Home from './pages/Home';
+import Login from './pages/Login';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <Login />
   </React.StrictMode>,
   document.getElementById('roots')
 );
