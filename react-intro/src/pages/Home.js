@@ -8,7 +8,7 @@ import Input from '../components/Input';
 const Home = () => {
     return(
         <React.Fragment>
-            <Header />
+            <Header title="Home" />
             <Button />
             <Input />
             <Section />
