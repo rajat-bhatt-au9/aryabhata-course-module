@@ -1,10 +1,11 @@
 import './SignupForm.css';
+import React from 'react';
 const SignupForm = (props) => {
     console.log(props)
     return (
-        <form onSubmit={props.onSubmit} style={{border:'1px solid #ccc'}}>
+        <form onSubmit={props.onSubmitHandler} style={{border:'1px solid #ccc'}}>
             <div className="container">
-                <h1>Sign Up</h1>
+                <h1>{props.title || 'SignUp'}</h1>
                 <p>Please fill in this form to create an account.</p>
                 <hr />
                 <label forhtml="email"><b>Email</b></label>
@@ -23,7 +24,7 @@ const SignupForm = (props) => {
                 <p>By creating an account you agree to our <a href="/" style={{color:'dodgerblue'}}>Terms & Privacy</a>.</p>
 
                 <div className="clearfix">
-                    <button type="button" className="cancelbtn">Cancel</button>
+                    <button onClick={props.onCancel} type="button" className="cancelbtn">Cancel</button>
                     <button type="submit" className="signupbtn">Sign Up</button>
                 </div>
             </div>
@@ -31,4 +32,4 @@ const SignupForm = (props) => {
     );
 };
 
-export default SignupForm;
+export default React.memo(SignupForm);
