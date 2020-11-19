@@ -1,29 +1,60 @@
 import React from 'react';
 import SignupForm from '../components/SignupForm';
-// const Signup = () => {
-//     return (
-//         <React.Fragment>
-
-//         </React.Fragment>
-//     );
-
-// };
-// export default Signup;
-
-// Re-render happens ONLY when state or props are changed||updated
-// If the state or prop of parent component is updated all the child component will re-render
 class Signup extends React.Component {    
     constructor(props) {
         super(props)
     
         this.state = {
-            data:[],
-            page: "Page",
-            title: "SignUp",
-            phoneNumber: 98765456788,
-            someOtherData: {
+            email: {
+                name: 'email',
+                value: '',
+                isRequired: true,
+                error:''
+            },
+            password: {
+                name: 'password',
+                value: '',
+                isRequired: true
+            },
+            repeat_password: {
+                name: 'repeat_password',
+                value: '',
+                isRequired: false
+            },
+            image: {
+                name: 'image',
+                value: '',
+                isRequired: false
+            },
+            terms: {
+                name: 'terms',
+                value: false,
+                isRequired: true
+            },
+            error: true
+        }
 
-            }
+        // this.validationHandler = this.validationHandler.bind(this)
+    }
+
+    validationHandler(key) {
+        const keyInfo = this.state[key];
+        if(keyInfo.isRequired && !keyInfo.value) {
+            this.setState({
+                [key]: {
+                    ...this.state[key],
+                    error: 'Please enter the email'
+                },
+                error: true
+            });
+        } else {
+            this.setState({
+                [key]: {
+                    ...this.state[key],
+                    error: ''
+                },
+                error: false
+            });
         }
     }
 
@@ -31,46 +62,41 @@ class Signup extends React.Component {
         if(event) {
             console.log('INSIDE IF CLASS BLOCK')
             event.preventDefault();
-            console.log(event);
         }
-        alert('onSubmitHandler')   
+        console.log(this.state); 
     }
 
-    inputHandler = (e) => {
-        console.log(e.target.value);
-    }
-
-    onCancel = () => {
-        // Wrong way
-        // this.state.title = "Some Other Title";
-
-        // Correct way
+    inputChangehandler = (key, value) => {
+        console.group('inputChangehandler');
+        console.log('key',key)
+        console.log('value',value)
+        console.groupEnd();
         this.setState({
-            page: "New Page",
-            title: "Some Other Title",
+            [key]: {
+                ...this.state[key],
+                value: value
+            }
+        },() =>{
+            this.validationHandler(key);
         });
     }
 
     render() {
-        const propsObj = {
-            inputHandler: this.inputHandler,
-            title: this.state.title,
-            // data: {
-            //     email:'',
-            //     pass:'',
-            // },
-            // datarr:[]
-        };
-        console.log(this.state)
+
         return(
             <React.Fragment>
                 <h1>{this.state.page}</h1>
                 <SignupForm
                     onSubmit={this.onSubmitHandler}
-                    onCancel={this.onCancel}
-                    pageName="Signup"
-                    {...propsObj}
-                    title={this.state.title}
+                    changeHandler={this.inputChangehandler}
+                    formInfo={{
+                        image: this.state.image,
+                        email: this.state.email,
+                        password: this.state.password,
+                        repeat_password: this.state.repeat_password,
+                        terms: this.state.terms
+                    }}
+                    error={this.state.error}
                 />
             </React.Fragment>
         );
