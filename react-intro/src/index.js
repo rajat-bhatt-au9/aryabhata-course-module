@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import Signup from './pages/Signup';
+import Routes from './components/Routes';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Signup />
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('roots')
 );
