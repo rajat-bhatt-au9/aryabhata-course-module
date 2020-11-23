@@ -10,7 +10,7 @@ const Users = (props) => {
 
     return (
         <React.Fragment>
-            <Header title="Home" />
+            <Header title="Users" />
             <ul>
                 {
                     users.map( user => {
