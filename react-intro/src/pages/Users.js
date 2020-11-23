@@ -1,16 +1,12 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-
-const users = [
-    { id: 1, name: "Name 1" },
-    { id: 2, name: "Name 2" },
-    { id: 3, name: "Name 3" },
-    { id: 4, name: "Name 4" },
-];
-
-
-const Users = () => {
+import users from '../dummyData/users';
+const Users = (props) => {
+    console.log('Users',props);
+    const redirect = (id) => {
+        props.history.push('/users/'+id)
+    };
 
     return (
         <React.Fragment>
@@ -19,7 +15,7 @@ const Users = () => {
                 {
                     users.map( user => {
                         return (
-                            <li key={user.id}>{user.name}</li>
+                            <li onClick={()=>redirect(user.id)} key={user.id}>{user.name}</li>
                         )
                     })
                 }
