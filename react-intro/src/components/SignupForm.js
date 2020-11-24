@@ -17,7 +17,7 @@ const SignupForm = (props) => {
                     value={formInfo.email.value}
                     onChange={(e) => changeHandler(e.target.name,e.target.value)}
                 />
-                <span>{formInfo.email.error}</span><br />
+                <span>{formInfo.email.error}</span><br /><br />
 
                 <label forhtml="psw"><b>Password</b></label>
                 <input
@@ -27,6 +27,7 @@ const SignupForm = (props) => {
                     value={formInfo.password.value}
                     onChange={(e) => changeHandler(e.target.name,e.target.value)}
                 />
+                <span>{formInfo.password.error}</span><br /><br />
 
                 <label forhtml="psw-repeat"><b>Repeat Password</b></label>
                 <input
@@ -58,6 +59,7 @@ const SignupForm = (props) => {
                     /> 
                     I accept the terms & policies
                 </label>
+                <span>{formInfo.terms.error}</span><br /><br />
                 
                 <p>By creating an account you agree to our <a href="/" style={{color:'dodgerblue'}}>Terms & Privacy</a>.</p>
 
