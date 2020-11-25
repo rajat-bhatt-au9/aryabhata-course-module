@@ -27,6 +27,14 @@ var reducer = function(state=initialData, action) {
 
 var store = createStore(reducer);
 
+console.dir(store);
+
+store.subscribe(function(){
+    if(store.getState().value > 1) {
+        console.log('INSIDE SUBSCRIPTION')
+    }
+})
+
 console.dir(store.getState());
 
 store.dispatch({
