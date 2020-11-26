@@ -1,5 +1,6 @@
 const initialState = {
-    counter: 0
+    counter: 0,
+    value: 10,
 }
 
 const reducer = (state, action) => {
@@ -15,6 +16,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 counter: state.counter-action.payload
+            }
+        case 'INC_VALUE':
+            return {
+                ...state,
+                value: state.value+action.payload
             }
     
         default:
