@@ -5,3 +5,9 @@ article {
     background-color: #f1f1f1;
     height: 300px; /* only for demonstration, should be removed */
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: red;
+    }
+}

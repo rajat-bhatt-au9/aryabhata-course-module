@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
-import Abc from './Abc';
 import Todo from './Todo';
 import store from './store';
 import reportWebVitals from './reportWebVitals';

@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import TodoItems from './TodoItems';
 class Todo extends React.Component {
     constructor(props) {
         super(props)
@@ -6,7 +8,6 @@ class Todo extends React.Component {
         this.state = {
             error:"",
             task: "",
-            todos: ['Revise for the test']
         }
     }
     
@@ -27,29 +28,27 @@ class Todo extends React.Component {
                 error: 'Please enter the task.'
             })
         }
-        else if(this.state.todos.includes(this.state.task)){
+        else if(this.props.todos.includes(this.state.task)){
             this.setState({
                 error: 'Please enter the a new task.'
             })
         }
-        else {
-            const todos = [ ...this.state.todos, this.state.task ];
+        else if(this.state.task.length < 10) {
             this.setState({
+                error: 'Task must have atleat 10 characters.'
+            })
+        }
+        else {
+            this.props.dispatch({
+                type: 'ADD_TASK',
+                payload: this.state.task
+            });
+            this.setState({
+                error:'',
                 task:'',
-                todos: todos
             })
         }
 
-    }
-
-    deleteTask = (todo) => {
-        // const todos = this.state.todos.filter(item => item !== todo);
-        const todos = this.state.todos.filter(function(item) {
-            return item !== todo;
-        });
-        this.setState({
-            todos
-        })
     }
 
     render() {
@@ -60,26 +59,21 @@ class Todo extends React.Component {
                     <input name="task" value={this.state.task} onChange={this.changeHandler}/>
                     <button onClick={this.addTask}>Add Tasks</button>
                 </div>
-                <div>
-                    <span>{this.state.error}</span>
-                </div>
-                <div>
-                    <ul>
-                        {
-                            this.state.todos.map((todo,idx) => {
-                                return (
-                                    <React.Fragment key={idx}>
-                                        <li >{todo}</li>
-                                        <button onClick={() => this.deleteTask(todo)}>Delete</button>
-                                    </React.Fragment>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
+                {
+                    this.state.error &&
+                    <div>
+                        <span>{this.state.error}</span>
+                    </div>
+                }
+                <TodoItems />
             </div>
         )
     }
 }
 
-export default Todo;
+const mapStateToProps = (state) => {
+    return {
+        todos : state
+    }
+}
+export default connect(mapStateToProps)(Todo);
