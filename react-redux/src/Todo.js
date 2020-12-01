@@ -83,7 +83,7 @@ class Todo extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        todos : state
+        todos : state.todos
     }
 }
 export default connect(mapStateToProps)(Todo);

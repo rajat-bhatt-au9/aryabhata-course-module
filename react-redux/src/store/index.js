@@ -1,12 +1,13 @@
 import { createStore, combineReducers } from 'redux';
 import counterReducer from './counterReducer';
 import todoReducer from './todoReducer';
+import reducer from './reducer';
 
-const reducer = combineReducers({
+const reducers = combineReducers({
     todos: todoReducer,
-    counter: counterReducer
+    counters: counterReducer
 });
 
-const store = createStore(reducer);
+const store = createStore(reducers);
 
 export default store;

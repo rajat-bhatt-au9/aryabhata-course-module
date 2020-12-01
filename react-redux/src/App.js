@@ -44,8 +44,9 @@ class App extends React.Component {
 // 2nd the state of redux store
 
 const mapStateToProps = (state) => {
+    console.log(state)
     return {
-        counter: state.counter,
+        counter: state.counters.counter,
     }
 }
 

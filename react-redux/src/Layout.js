@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom';
-import './Layout.css';
 const Layout = (props) => {
     return (
         <>
-            <ul>
-                <li className="nav-li"><Link to={"/"}>Home</Link></li>
-                <li className="nav-li"><Link to={"/todos"}>Task List</Link></li>
-            </ul>
+            <nav className="navbar navbar-default">
+                <div className="container-fluid">
+                    <ul className="nav navbar-nav">
+                        <li ><Link to={"/"}>Home</Link></li>
+                        <li ><Link to={"/todos"}>Task List</Link></li>
+                    </ul>
+                </div>
+            </nav>
             {props.children}
+            <footer>Redux</footer>
         </>
     )
 };
