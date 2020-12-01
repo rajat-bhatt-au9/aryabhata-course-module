@@ -2,17 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './index.css';
-import App from './App';
-import Todo from './Todo';
 import store from './store';
+import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import Routes from './Routes';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Todo title="Todos" />
-      {/* <App />
-      <Abc /> */}
+      <BrowserRouter>
+        <Routes/>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

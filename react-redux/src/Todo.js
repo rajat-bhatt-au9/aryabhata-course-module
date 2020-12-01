@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import TodoItems from './TodoItems';
+import logo from './logo.svg';
 class Todo extends React.Component {
     constructor(props) {
         super(props)
@@ -52,8 +53,17 @@ class Todo extends React.Component {
     }
 
     render() {
+        const imageStyle = {
+            width: "20px",
+            height: "20px"
+        }
         return (
-            <div>
+            <div style={{
+                background: 'white',
+                fontFamily: 'fantasy',
+                color: 'green'
+            }}>
+                <img style={imageStyle} alt="logo" src={logo} />
                 <h3>{this.props.title}</h3>
                 <div>
                     <input name="task" value={this.state.task} onChange={this.changeHandler}/>

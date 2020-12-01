@@ -23,10 +23,7 @@ const TodoItems = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        deleteTask: (todo) => dispatch({
-            type: 'REMOVE_TASK',
-            payload: todo
-        })
+        deleteTask: (todo) => dispatch({ type: 'REMOVE_TASK', payload: todo })
     }
 }
 

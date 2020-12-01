@@ -3,7 +3,7 @@ const initialState = {
     value: 10,
 }
 
-const reducer = (state, action) => {
+const counterReducer = (state, action) => {
     state = state || initialState
 
     switch (action.type) {
@@ -28,4 +28,4 @@ const reducer = (state, action) => {
     }
 };
 
-export default reducer;
+export default counterReducer;
