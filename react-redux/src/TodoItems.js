@@ -9,8 +9,11 @@ const TodoItems = (props) => {
                     props.todos.map((todo,idx) => {
                         return (
                             <React.Fragment key={idx}>
-                                <li >{todo}</li>
-                                <button onClick={() => props.deleteTask(todo)}>Delete</button>
+                                <li>
+                                <div >{todo.title}</div>
+                                <p >{todo.description}</p>
+                                <button onClick={() => props.deleteTask(todo.id)}>Delete</button>
+                                </li>
                             </React.Fragment>
                         )
                     })

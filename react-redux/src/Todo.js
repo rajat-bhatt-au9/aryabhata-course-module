@@ -9,6 +9,7 @@ class Todo extends React.Component {
         this.state = {
             error:"",
             task: "",
+            title: "",
         }
     }
     
@@ -42,11 +43,16 @@ class Todo extends React.Component {
         else {
             this.props.dispatch({
                 type: 'ADD_TASK',
-                payload: this.state.task
+                payload: {
+                    id: new Date(),
+                    title: this.state.title,
+                    description: this.state.task
+                }
             });
             this.setState({
                 error:'',
                 task:'',
+                title:'',
             })
         }
 
@@ -66,7 +72,8 @@ class Todo extends React.Component {
                 <img style={imageStyle} alt="logo" src={logo} />
                 <h3>{this.props.title}</h3>
                 <div>
-                    <input name="task" value={this.state.task} onChange={this.changeHandler}/>
+                    <input name="title" value={this.state.title} onChange={this.changeHandler} placeholder="Title"/>
+                    <input name="task" value={this.state.task} onChange={this.changeHandler} placeholder="Description"/>
                     <button onClick={this.addTask}>Add Tasks</button>
                 </div>
                 {
