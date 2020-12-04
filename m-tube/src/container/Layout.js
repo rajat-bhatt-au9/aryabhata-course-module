@@ -11,7 +11,7 @@ import googleConfig from '../config/google.json';
 class Layout extends React.Component {
 
     componentDidMount() {
-        const user = localStorage.getItem('user');
+        const user = JSON.parse(localStorage.getItem('user'));
         if(user) {
             this.props.dispatch({
                 type: AUTH_ACTION.LOGIN,
