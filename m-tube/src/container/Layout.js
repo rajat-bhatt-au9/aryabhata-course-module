@@ -1,24 +1,25 @@
-import React from 'react';
 import './Layout.css';
+import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { GoogleLogin } from 'react-google-login';
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
+
+import { AUTH_ACTION, PROFILE_ACTION } from '../actions';
+
 import googleConfig from '../config/google.json';
 
 class Layout extends React.Component {
 
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-            isLoggedIn: false
-        }
-    }
-    
     componentDidMount() {
         const user = localStorage.getItem('user');
         if(user) {
-            this.setState({
-                isLoggedIn: true
+            this.props.dispatch({
+                type: AUTH_ACTION.LOGIN,
+                payload: user.token
+            });
+            this.props.dispatch({
+                type: PROFILE_ACTION.SET,
+                payload: user.userData
             });
         }
     }
@@ -33,38 +34,48 @@ class Layout extends React.Component {
             userData: response.profileObj
         }
         localStorage.setItem('user',JSON.stringify(user));
-        this.setState({
-            isLoggedIn: true
+        this.props.dispatch({
+            type: AUTH_ACTION.LOGIN,
+            payload: user.token
+        });
+        this.props.dispatch({
+            type: PROFILE_ACTION.SET,
+            payload: user.userData
         });
     }
 
     logout = () => {
         localStorage.removeItem('user');
-        this.setState({
-            isLoggedIn: false
-        });
+        this.props.dispatch({ type: AUTH_ACTION.LOGOUT });
+        this.props.dispatch({ type: PROFILE_ACTION.RESET });
     }
 
     render(){
+        console.log(this.props);
         return (
             <>
                 <div className="topnav">
                     <Link className={'active'} to={'/'}>Videos</Link>
                     <div style={{float:'right'}}>
                         {
-                            this.state.isLoggedIn &&
+                            this.props.auth.isAuthenticated &&
                             <>
-                            <Link to={'/profile'}>Profile</Link>
-                            <button onClick={this.logout}>Logout</button>
+                                <Link to={'/profile'}>Profile</Link>
+                                <GoogleLogout
+                                    clientId={googleConfig.clientId}
+                                    buttonText="Logout"
+                                    onLogoutSuccess={this.logout}
+                                />
                             </>
                         }
                         {
-                            !this.state.isLoggedIn &&
+                            !this.props.auth.isAuthenticated &&
                             <GoogleLogin 
                                 clientId={googleConfig.clientId}
                                 onSuccess={this.googleCallback}
                                 onFailure={this.googleCallback}
                                 buttonText="Login"
+                                isSignedIn={true}
                             />
                         }
                     </div>
@@ -77,4 +88,10 @@ class Layout extends React.Component {
     }
 }
 
-export default Layout;
+const mapStateToProps = (state) => {
+    return {
+        auth: state.auth
+    }
+}
+
+export default connect(mapStateToProps)(Layout);
