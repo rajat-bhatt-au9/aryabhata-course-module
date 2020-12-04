@@ -60,7 +60,7 @@ class Layout extends React.Component {
                         {
                             this.props.auth.isAuthenticated &&
                             <>
-                                <Link to={'/profile'}>Profile</Link>
+                                <Link to={'/profile'}>{this.props.profileName}</Link>
                                 <GoogleLogout
                                     clientId={googleConfig.clientId}
                                     buttonText="Logout"
@@ -90,7 +90,8 @@ class Layout extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        auth: state.auth
+        auth: state.auth,
+        profileName: state.profile.name
     }
 }
 
