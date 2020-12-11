@@ -1,0 +1,20 @@
+import React,{Fragment} from 'react';
+import ReactDOM from 'react-dom';
+import Header from './component/header';
+import Footer from './component/footer';
+
+const App = ()=> {
+    return(
+        <Fragment>
+            <Header/>
+            <h1>My Attain </h1>
+            <h2>Test </h2>
+            <img src=""/>
+            <a href=""/>
+            <Footer year="2021" month="Jan"/>
+        </Fragment>
+    )
+}
+
+ReactDOM.render(<App/>,document.getElementById('root'))
+
