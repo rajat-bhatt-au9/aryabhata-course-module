@@ -1,6 +1,4 @@
-.logo-header {
-    font-family: Poppins;
-    font-size: 50px;
+.logo-header{
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -148,11 +146,11 @@
     margin-left: 7%;
 }
 
-.Item {
+.item {
     width: 875px;
     height: 320px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    background-color: #ffffff;
+    background-color: #f2eded;
     margin-bottom: 20px;
 }
 
@@ -200,8 +198,8 @@
 }
 
 .Image {
-    width: 280px;
-    height: 220px;
+    width: 90%;
+    height: 200px;
     border-radius: 23px;
     background-color: #ea6060;
     margin-left:5%;
@@ -240,7 +238,7 @@
     padding-top: 4%;
 }
 
-.cuisine {
+.CUISINES-COST-FOR-TWO {
     font-family: Poppins;
     font-size: 16px;
     font-weight: normal;
@@ -253,7 +251,7 @@
     padding-left: 25%;
 }
 
-.cuisine_data {
+.Bakery-700 {
     font-family: Poppins;
     font-size: 16px;
     font-weight: normal;

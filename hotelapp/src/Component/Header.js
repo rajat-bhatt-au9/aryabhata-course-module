@@ -16,7 +16,7 @@ const Header = () => {
                 <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><Link to="/">Home</Link></li>
-                    <li ><Link to="/">Booking</Link></li>
+                    <li ><Link to="/viewbooking">Booking</Link></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

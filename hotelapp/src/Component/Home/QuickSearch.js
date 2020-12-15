@@ -12,6 +12,7 @@ class QuickSearch extends Component{
         }
     }
     render(){
+        console.log("in quick search>>>",this.props)
         return(
             <div>
                 <QuickDisplay tripdata={this.state.tripType}/>
