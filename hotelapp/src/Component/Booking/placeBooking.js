@@ -10,7 +10,7 @@ class PlaceBooking extends Component{
         this.state={
             id:Math.floor(Math.random()*10000),
             hotelname: sessionStorage.getItem('hotelname'),
-            name:'',
+            name:sessionStorage.getItem('username'),
             phone:'',
             status:"Pending"
         }
