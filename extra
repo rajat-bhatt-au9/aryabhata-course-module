@@ -1,0 +1,186 @@
+Basic of react
+App with react (full stack)
+
+Login/logout (JWT)
+Login/logout (oAuth)
+
+fullstack with Login
+
+Redux
+Redux fullstack
+
+//////////////////////////////////
+React >>>>>>
+SPA > single page application
+
+>>>>>>>>><<<<<<<<<<<<
+class> logical component (data,api,logic,display) heavy
+functional > dumb component (display)    light
+hooks
+
+state > local variable
+props > transfer the data
+
+webpack
+
+
+function test(a,b){
+    var out = [a,b]
+    return out
+}
+
+test(1,3)
+3
+
+
+function add(a,b){
+    return a+b
+}
+
+
+add(1,2)
+
+parent to child => props 
+child to parent => callback function with props
+
+var a = [0,1,2,3]
+
+a.map((data) => {return data*2})
+[0,2,3,6]
+
+a.filter((data) => {return data*2})
+[1, 2, 3]
+
+map always return same length of output array as input array
+map suse to apply logic and iterate
+
+filter may or may not return same length of output array
+filter only return value for which output is true
+
+expect 0 all +ve or -ve are true
+
+var city = ["London", "NewYork", "Dubai", "Helsinki", "Delhi", "Amsterdam"]
+
+city.indexOf('Delhi')
+4
+
+city.indexOf('London')
+0
+
+city.indexOf('Venice')
+-1
+city.indexOf('Nice')
+-1
+
+function add(a,b){
+    return a+b
+}
+
+var add = function (a,b){return a+b}
+
+add(1,2)
+
+
+var url ="https://github.com/Aakashdeveloper/Angular5-Seed"
+undefined
+url.split('/')
+(5) ["https:", "", "github.com", "Aakashdeveloper", "Angular5-Seed"]
+var out = url.split('/')
+undefined
+out[out.length-1]
+"Angular5-Seed"
+
+var a = "javaScript"
+a.split('')
+(10) ["j", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
+
+(get) hotels>         https://developerfunnel.herokuapp.com/hotels
+(get) hotelwrtcity >  https://developerfunnel.herokuapp.com/hotels?city=6
+(get) hoteldetails >  https://developerfunnel.herokuapp.com/hotelsdetails/1
+(get) onbasisoftrip > https://developerfunnel.herokuapp.com/hotellist/1
+(get) roomfilter >    https://developerfunnel.herokuapp.com/hotellist/1?roomtype=1
+(get) costfilter >    https://developerfunnel.herokuapp.com/hotellist/1?hcost=1000&lcost=500
+(get) cityname >      https://developerfunnel.herokuapp.com/location
+(get) rooms >         https://developerfunnel.herokuapp.com/rooms
+(get) triptype>       https://developerfunnel.herokuapp.com/booking
+(get) bookingdetails> https://developerfunnel.herokuapp.com/allBooking
+(post)placebooking >  https://developerfunnel.herokuapp.com/placeBook
+
+Header
+------
+Home 
+    > Search
+    > Quick Search
+listing
+    > Suggestion
+    > Room filter
+    > Cost filter
+    > listing
+details
+place booking
+booking
+--------
+Footer
+
+React-tabs 
+React-slick
+
+
+npm i react-router-dom react-tabs react-slick
+
+
+"10"+1
+"10"+1
+"101"
+"10"-1
+9
+"10"*2
+20
+"10a"-1
+NaN
+"10"-"1"
+9
+
+var a ="a123456bc"
+var b ="12345abc"
+
+
+Math.floor(Math.random()*(max-min))+min
+
+
+Math.floor(Math.random()*(20-1))+1
+
+
+var a = 10
+var b = "my age is "+a 
+var c = `my age is ${a}`
+
+
+const myclick = async () => {
+  // do something
+}
+
+////////////////////////////
+npm i -g json-server
+
+json-server --watch db.json --port 8900
+
+
+//////////////
+/******GetAllUser*****/
+(GET)> http://localhost:5000/api/auth/users
+
+/******Register*****/
+(POST)> http://localhost:5000/api/auth/register
+(body) => {"name":"Aakash", "email":"aa@gmail.com","password":"12345678","role":"user?"}
+
+
+/******Login*****/
+(POST) => http://localhost:5000/api/auth/login
+(body)  => {"email":"aa@gmail.com","password":"12345678"}
+(response)=> {auth:true,token:'dgsdg'}
+
+/******UserInfo*****/
+(GET) => http://localhost:5000/api/auth/userinfo
+(Header) => {'x-access-token':'token value from login'}
+(response) => {userinfo}

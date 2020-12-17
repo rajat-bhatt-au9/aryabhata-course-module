@@ -9,27 +9,31 @@ class Signup extends React.Component {
                 name: 'email',
                 value: '',
                 isRequired: true,
-                error:''
+                error:'Please enter the value'
             },
             password: {
                 name: 'password',
                 value: '',
-                isRequired: true
+                isRequired: true,
+                error:'Please enter the value'
             },
             repeat_password: {
                 name: 'repeat_password',
                 value: '',
-                isRequired: false
+                isRequired: false,
+                error:''
             },
             image: {
                 name: 'image',
                 value: '',
-                isRequired: false
+                isRequired: false,
+                error:''
             },
             terms: {
                 name: 'terms',
                 value: false,
-                isRequired: true
+                isRequired: true,
+                error:'Please enter the value'
             },
             error: true
         }
@@ -43,7 +47,7 @@ class Signup extends React.Component {
             this.setState({
                 [key]: {
                     ...this.state[key],
-                    error: 'Please enter the email'
+                    error: 'Please enter the value'
                 },
                 error: true
             });

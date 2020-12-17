@@ -3,7 +3,8 @@ import Header from '../components/Header';
 import Section from '../components/Section';
 import Footer from '../components/Footer';
 
-const Information = () => {
+const Information = (props) => {
+    console.log('Information',props);
     return(
         <React.Fragment>
             <Header title="Information" />
